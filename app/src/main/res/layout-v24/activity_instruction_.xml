@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ic_background"
+    tools:context="com.example.wincomp.rj45colors.Instruction_Activity">
+
+    <VideoView
+        android:id="@+id/videoView"
+        android:layout_width="wrap_content"
+        android:layout_height="377dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_weight="3" />
+
+    <Button
+        android:id="@+id/button_prew"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="375dp"
+        android:layout_marginBottom="8dp"
+        android:text="PREVIOS"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_weight="1" />
+
+    <Button
+        android:id="@+id/button_start"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="324dp"
+        android:layout_marginEnd="59dp"
+        android:layout_marginBottom="8dp"
+        android:onClick="clickStartBtn"
+        android:text="START"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_weight="1" />
+
+    <Button
+        android:id="@+id/button_next"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="344dp"
+        android:layout_marginEnd="39dp"
+        android:layout_marginBottom="8dp"
+        android:text="NEXT"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_weight="1" />
+
+    <SeekBar
+        android:id="@+id/seekBar"
+        style="@android:style/Widget.Material.SeekBar.Discrete"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintVertical_weight="1"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:max="5"
+        android:progress="1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/videoView" />
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">RJ45 colors</string>
+    <string name="_568b4">568B/4p</string>
+    <string name="_568b2">568B/2p</string>
+    <string name="_568a4">568A/4p</string>
+    <string name="_568a2">568A/2p</string>
+    <string name="close">close</string>
+    <string name="powerManagerTag">RJ45powerSaver OFF</string>
+    <string name="ping">PING</string>
+</resources>
