@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.net.Uri;
 
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import androidx.viewpager.widget.ViewPager;
 import androidx.appcompat.app.AppCompatActivity;
@@ -25,6 +27,7 @@ public class  MainActivity extends AppCompatActivity implements com.wincomp.rj45
 com.wincomp.rj45colors.Fragment_568A4.OnFragmentInteractionListener, com.wincomp.rj45colors.Fragment_568A2.OnFragmentInteractionListener {
     Boolean screenActivity = false;
     private AdView mAdView;
+    private InterstitialAd mInterstitialAd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +56,22 @@ com.wincomp.rj45colors.Fragment_568A4.OnFragmentInteractionListener, com.wincomp
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
 
+        //Set and init interstitial
+        MobileAds.initialize(this,
+                "ca-app-pub-3940256099942544~3347511713");
+        mInterstitialAd = new InterstitialAd(this);
+        mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
+        mInterstitialAd.loadAd(new AdRequest.Builder().build());
+        //ner ads loaded
+        mInterstitialAd.setAdListener(new AdListener() {
+            @Override
+            public void onAdClosed() {
+                // Load the next interstitial.
+                mInterstitialAd.loadAd(new AdRequest.Builder().build());
+            }
+
+        });
+
     }
 
     @Override
@@ -68,6 +87,9 @@ com.wincomp.rj45colors.Fragment_568A4.OnFragmentInteractionListener, com.wincomp
     }
 
     public void pingTool(MenuItem item) {
+        // run reklama
+        if (mInterstitialAd.isLoaded()) mInterstitialAd.show();
+
         Intent messageIntent = new Intent(this, com.wincomp.rj45colors.Instruction_Activity.class);
         startActivity(messageIntent);
     }
