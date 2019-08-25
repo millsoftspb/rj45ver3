@@ -3,11 +3,10 @@ package com.wincomp.rj45colors;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.net.Uri;
-import android.os.PowerManager;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import androidx.viewpager.widget.ViewPager;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -18,10 +17,14 @@ import android.view.WindowManager;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
+
 
 public class  MainActivity extends AppCompatActivity implements com.wincomp.rj45colors.Fragment_568B4.OnFragmentInteractionListener, com.wincomp.rj45colors.Fragment_568B2.OnFragmentInteractionListener,
 com.wincomp.rj45colors.Fragment_568A4.OnFragmentInteractionListener, com.wincomp.rj45colors.Fragment_568A2.OnFragmentInteractionListener {
     Boolean screenActivity = false;
+    private AdView mAdView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +41,17 @@ com.wincomp.rj45colors.Fragment_568A4.OnFragmentInteractionListener, com.wincomp
 
         // Set the adapter onto the view pager
         viewPager.setAdapter(adapter);
+
+        //Set and init ad_view
+        MobileAds.initialize(this, new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(InitializationStatus initializationStatus) {
+            }
+        });
+
+        mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
     }
 
