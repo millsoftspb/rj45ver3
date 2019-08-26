@@ -21,6 +21,7 @@ public class Instruction_Activity extends AppCompatActivity {
         MediaController mediaController = new MediaController(this);
         videoView.setMediaController(mediaController);
         mediaController.setAnchorView(videoView);
+        videoView.start();
 
     }
 }
