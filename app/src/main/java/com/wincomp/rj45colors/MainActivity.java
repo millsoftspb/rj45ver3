@@ -98,11 +98,11 @@ com.wincomp.rj45colors.Fragment_568A4.OnFragmentInteractionListener, com.wincomp
         FloatingActionButton fab = (FloatingActionButton) view;
         if (!screenActivity) {
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-            fab.setImageResource(R.drawable.ic_brightness_high_black_24dp);
+            fab.setImageResource(R.drawable.ic_wb_incandescent_black_24dp);
             screenActivity = true;
         } else {
             getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-            fab.setImageResource(R.drawable.ic_brightness_auto_black_24dp);
+            fab.setImageResource(R.drawable.ic_wb_incandescent_grey_24dp);
             screenActivity = false;
         }
     }

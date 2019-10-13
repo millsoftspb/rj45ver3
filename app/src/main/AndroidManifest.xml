@@ -15,7 +15,7 @@
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-9294821841734437~8999697286"/>
         <activity android:name=".Instruction_Activity"
-            android:screenOrientation="landscape"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme2">
         </activity>
         <activity android:name=".MainActivity">
