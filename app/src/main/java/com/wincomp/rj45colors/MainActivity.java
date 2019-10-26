@@ -58,9 +58,9 @@ com.wincomp.rj45colors.Fragment_568A4.OnFragmentInteractionListener, com.wincomp
 
         //Set and init interstitial
         MobileAds.initialize(this,
-                "ca-app-pub-3940256099942544~3347511713");
+                "ca-app-pub-9294821841734437~8999697286");
         mInterstitialAd = new InterstitialAd(this);
-        mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
+        mInterstitialAd.setAdUnitId("ca-app-pub-9294821841734437/9545305034");
         mInterstitialAd.loadAd(new AdRequest.Builder().build());
         //ner ads loaded
         mInterstitialAd.setAdListener(new AdListener() {
