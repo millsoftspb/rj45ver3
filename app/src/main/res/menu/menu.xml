@@ -4,7 +4,7 @@
 
     <item
         android:id="@+id/closeApp"
-        android:icon="@drawable/ic_info_black_24dp"
+        android:icon="@drawable/ic_video_instruction"
         android:title="@string/close"
         app:showAsAction="ifRoom"
         android:onClick="pingTool"/>

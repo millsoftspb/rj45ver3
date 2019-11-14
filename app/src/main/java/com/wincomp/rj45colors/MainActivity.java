@@ -3,7 +3,6 @@ package com.wincomp.rj45colors;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.net.Uri;
-
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -15,7 +14,6 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
-
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
@@ -32,9 +30,8 @@ com.wincomp.rj45colors.Fragment_568A4.OnFragmentInteractionListener, com.wincomp
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_main);
-
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         // Find the view pager that will allow the user to swipe between fragments
         ViewPager viewPager = (ViewPager) findViewById(R.id.viewPager);
@@ -51,7 +48,6 @@ com.wincomp.rj45colors.Fragment_568A4.OnFragmentInteractionListener, com.wincomp
             public void onInitializationComplete(InitializationStatus initializationStatus) {
             }
         });
-
         mAdView = findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
@@ -60,7 +56,7 @@ com.wincomp.rj45colors.Fragment_568A4.OnFragmentInteractionListener, com.wincomp
         MobileAds.initialize(this,
                 "ca-app-pub-9294821841734437~8999697286");
         mInterstitialAd = new InterstitialAd(this);
-        mInterstitialAd.setAdUnitId("ca-app-pub-9294821841734437/9545305034");
+        mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/8691691433");
         mInterstitialAd.loadAd(new AdRequest.Builder().build());
         //ner ads loaded
         mInterstitialAd.setAdListener(new AdListener() {
@@ -98,11 +94,11 @@ com.wincomp.rj45colors.Fragment_568A4.OnFragmentInteractionListener, com.wincomp
         FloatingActionButton fab = (FloatingActionButton) view;
         if (!screenActivity) {
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-            fab.setImageResource(R.drawable.ic_wb_incandescent_black_24dp);
+            fab.setImageResource(R.drawable.ic_keep_screen_on);
             screenActivity = true;
         } else {
             getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-            fab.setImageResource(R.drawable.ic_wb_incandescent_grey_24dp);
+            fab.setImageResource(R.drawable.ic_keep_screen_off);
             screenActivity = false;
         }
     }
